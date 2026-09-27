@@ -3,7 +3,7 @@ name: Tourism MLOps Pipeline
 on:
   push:
     branches: [ main ]
-  workflow_dispatch:   # allow manual trigger
+  workflow_dispatch:   # allows manual trigger
 
 jobs:
   ml-pipeline:
