@@ -79,7 +79,7 @@ def main():
             mlflow.log_params(gs.best_params_)
             mlflow.log_params({"model_type": name})
             mlflow.log_metrics({**train_m, **test_m})
-            mlflow.sklearn.log_model(model, "model")
+            mlflow.sklearn.log_model(model, "model", skops_trusted_types=["sklearn.tree._tree.Tree"])
             print("Best params:", gs.best_params_)
             print("Test F1:", round(test_m["test_f1"], 4),
                   "  ROC-AUC:", round(test_m["test_roc_auc"], 4))
